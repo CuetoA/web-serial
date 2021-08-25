@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+	<h1>Conectándonos al servidor</h1>
+	<div>id = "demo"</div>
+
+</body>
+
+<script>
+
+	var socket = io.connect('http://localhost:8080', {'forceNew': true});
+	socket.on('llegaDeSerial', function(data){
+		console.log(data);
+		var datos = data.toString('utf8');
+
+		document.gotElementById("demo").innerHTML = data.text + "<br/>";
+	});
+
+	socket.on("llegaDeSerial", function(data){
+		
+	});
+</script>
+
+
+
+
+</html>
