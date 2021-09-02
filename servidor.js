@@ -3,7 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-var serialport = require("serialprot");
+var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 
 
@@ -14,7 +14,7 @@ app.get('/', function(req, res){ res.sendFile(__dirname + 'index.html') });
 server.listen(8080,() => { console.log('Server lsitening on http://localhost:8080') });
 
 
-var sp = new serialport( 'COM 13',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
+var sp = new serialport('COM3',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
 
 
 var texto = 'Hola cliente... soy servidor'
