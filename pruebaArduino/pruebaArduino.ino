@@ -16,7 +16,7 @@ void loop() {
     if (input=='1'){
         digitalWrite(2,HIGH); //Si mandamos un 1 a través de la consola
         //el LED se enciende
-        delay(1000);
+        delay(3000);
       }
     else
       {
