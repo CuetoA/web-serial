@@ -18,13 +18,19 @@
 </body>
 
 <script>
+	console.log('Test 1');
 
 	var socket = io.connect('http://localhost:8080', {'forceNew': true});
 	socket.on('llegaDeSerial', function(data){
+		console.log('Test 2');
 		console.log(data);
+		document.write(data + "<br>");
 		var datos = data.toString('utf8');
+		//document.write(datos + "<br>");
 
-		document.gotElementById("demo").innerHTML = data.text + "<br/>";
+		//document.gotElementById("demo").innerHTML = data.text + "<br/>";
+
+		//let verORegistrar =         document.getElementById('accion')
 	});
 
 	socket.on("llegaDeSerial", function(data){
