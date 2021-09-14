@@ -14,7 +14,8 @@ app.get('/', function(req, res){ res.sendFile(__dirname + 'index.html') });
 server.listen(8080,() => { console.log('Server lsitening on http://localhost:8080') });
 
 
-var sp = new serialport('COM3',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
+console.log('kkkkk')
+var sp = new serialport('COM6',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
 
 
 var texto = 'Hola cliente... soy servidor'
@@ -30,6 +31,7 @@ io.on('connection', function(socket){
 
 	sp.on('data', function(data){
 		console.log('data serial recived: ' + data);
+		//document.write('data recived: ' + data);
 
 		datosSP = data;
 
