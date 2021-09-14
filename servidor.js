@@ -39,3 +39,5 @@ io.on('connection', function(socket){
 	});
 
 }); //sockets io
+
+//Cambios :D
