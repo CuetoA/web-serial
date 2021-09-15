@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<script src="/socket.io/socket.io.js"></script>
 
 <head>
 	<meta charset="utf-8">
@@ -12,33 +11,13 @@
 
 <body>
 
-	<h1>Conectándonos al servidor</h1>
-	<div>id = "demo"</div>
+	<h1>Cuénta!!!!</h1>
+	<h2 id="datos" style="margin-left: auto; margin-right: auto;"></h2>
+
+	<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+	<script src="/main.js" charset="utf-8"></script>
+
+	
 
 </body>
-
-<script>
-	console.log('Test 1');
-
-	var socket = io.connect('http://localhost:8080', {'forceNew': true});
-	socket.on('llegaDeSerial', function(data){
-		console.log('Test 2');
-		console.log(data);
-		document.write(data + "<br>");
-		var datos = data.toString('utf8');
-		//document.write(datos + "<br>");
-
-		//document.gotElementById("demo").innerHTML = data.text + "<br/>";
-
-		//let verORegistrar =         document.getElementById('accion')
-	});
-
-	socket.on("llegaDeSerial", function(data){
-		
-	});
-</script>
-
-
-
-
 </html>

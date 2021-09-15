@@ -15,6 +15,11 @@ p_file = 'C:\Windows\System32\powershell.exe '
 cmd1 = 'cd '
 cmd2 = 'nodemon servidor.js'
 cmd3 = 'npm init --yes'
+<<<<<<< HEAD
+=======
+cmd4 = 'npm install serialport --yes'
+cmd5 = 'npm install express'
+>>>>>>> 3a64d6db02db4bec005918dd4e8f9246cbe8a46e
 
 
 command_1 = p_file + cmd1 + cur_folder

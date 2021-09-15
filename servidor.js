@@ -1,41 +1,35 @@
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
+const http = require('http')
+const express = require('express');
+const SocketIO = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
 var io = require('socket.io')(server);
 
-var serialport = require("serialport");
-var SerialPort = serialport.SerialPort;
+const Serialport = require("serialport");
+const Readline = Serialport.parsers.Readline;
+const port = new Serialport('COM6',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
+const parser = port.pipe(new Readline());
 
 
 app.use(express.static(__dirname + '/')); // Main path
+server.listen(8080,() => { 
+	console.log('Server lsitening on http://localhost:8080') 
+});
 
+
+parser.on('open', function() {
+	console.log('connection is opened');
+});
+
+parser.on('data', function(data){
+	console.log(data);
+	io.emit('temp', data);
+});
+
+port.on('error', function(err){
+	console.log(err);
+});
+
+//Esto se debe quedar al final
 app.get('/', function(req, res){ res.sendFile(__dirname + 'index.html') });
-
-server.listen(8080,() => { console.log('Server lsitening on http://localhost:8080') });
-
-
-console.log('kkkkk')
-var sp = new serialport('COM6',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
-
-
-var texto = 'Hola cliente... soy servidor'
-
-io.on('connection', function(socket){
-	console.log("New connection is detected...");
-	var connectedUsersCount = io.engine.clientsCount;
-	console.log("Number of users connected: " + connectedUsersCount);
-
-	socket.emit("cadena 1", texto);
-
-
-
-	sp.on('data', function(data){
-		console.log('data serial recived: ' + data);
-		//document.write('data recived: ' + data);
-
-		datosSP = data;
-
-		socket.emit('llegaDeSerial', {text: datosSP});
-	});
-
-}); //sockets io
