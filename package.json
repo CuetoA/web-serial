@@ -1,0 +1,26 @@
+{
+  "name": "web-serial",
+  "version": "1.0.0",
+  "description": "Test of the web server communicated by serial port",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serialport": "^9.2.1",
+    "socket.io": "^4.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CuetoA/web-serial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CuetoA/web-serial/issues"
+  },
+  "homepage": "https://github.com/CuetoA/web-serial#readme"
+}
