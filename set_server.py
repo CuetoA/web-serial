@@ -14,6 +14,9 @@ cur_folder = os.path.dirname(os.path.abspath(__file__))
 p_file = 'C:\Windows\System32\powershell.exe '
 cmd1 = 'cd '
 cmd2 = 'nodemon servidor.js'
+cmd3 = 'npm init --yes'
+cmd4 = 'npm install serialport --yes'
+cmd5 = 'npm install express'
 
 
 command_1 = p_file + cmd1 + cur_folder
