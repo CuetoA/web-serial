@@ -17,5 +17,7 @@ apagar.addEventListener('click', () => {
 function enviarDatos(valor){
 	console.log('prueba prueba');
 	console.log('se envió un: ', valor);
-	console.log('')
+	console.log('');
+
+
 }
