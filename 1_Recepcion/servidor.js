@@ -9,6 +9,7 @@ var io = require('socket.io')(server);
 const SocketIO = require('socket.io');
 var io = require('socket.io')(server);
 
+// Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const port = new Serialport('COM6',{baudRate: 115200, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768});
