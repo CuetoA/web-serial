@@ -3,9 +3,6 @@ const prender =     document.getElementById("on-button")
 const apagar =      document.getElementById("off-button")
 
 
-
-
-
 // Comportamiento de botones
 prender.addEventListener('click', () => {
     enviarDatos('1');
@@ -22,5 +19,3 @@ function enviarDatos(valor){
 	console.log('se envió un: ', valor);
 	console.log('')
 }
-
-
