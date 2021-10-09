@@ -14,4 +14,4 @@ server.listen(8080,() => {
 
 
 //Llamado a la página
-app.get('/', function(req, res){ res.sendFile(__dirname + 'index.html') });
+app.get('/', function(req, res){ res.sendFile(__dirname + '/e-index.html') });
