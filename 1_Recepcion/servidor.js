@@ -1,9 +1,12 @@
+// Constantes apra inicial servidor
 const http = require('http')
 const express = require('express');
-const SocketIO = require('socket.io');
-
 const app = express();
 const server = http.createServer(app);
+var io = require('socket.io')(server);
+
+// Constantes para iniciar el socket
+const SocketIO = require('socket.io');
 var io = require('socket.io')(server);
 
 const Serialport = require("serialport");
