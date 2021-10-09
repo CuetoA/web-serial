@@ -25,8 +25,8 @@ server.listen(8080,() => {
 });
 
 // Escuchando el puerto serie
-parser.on('data', function(){
-		console.log('Abrimos la conexión con serial');
+parser.on('data', (line)=>{
+		console.log('Saludando al arduino: ' + line);
 		console.log('');
 		port.write('1');
 });
