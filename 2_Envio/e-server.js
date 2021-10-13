@@ -32,5 +32,9 @@ parser.on('data', (line)=>{
 });
 
 
+document.querySelector('button').onclick = () =>{
+	socket.send('hello');
+};
+
 //Llamado a la página
 app.get('/', function(req, res){ res.sendFile(__dirname + '/e-index.html') });
