@@ -21,19 +21,19 @@ socket.on("an_event", (data) => {
 
 // Función de envío
 function enviarDatos(valor) {
-	console.log('prueba prueba');
-	console.log('se envió un: ', valor);
-	console.log('');
-	console.log(socket)
+	//console.log('prueba prueba');
+	//console.log('se envió un: ', valor);
+	//console.log('');
+	//console.log(socket)
 	// Si es un 1
 	if (valor === "1") {
 		// emitir un evento de encendido
 		socket.emit('encender', valor);
-		console.log('enceder');
+		console.log('Test encender 1');
 		// Si es un  0
 	} else {
 		// emitir un evento de apagado
 		socket.emit('apagar', valor);
-		console.log('apagar');
+		console.log('Test apagar 1');
 	}
 }
