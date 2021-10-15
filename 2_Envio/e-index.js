@@ -19,5 +19,14 @@ function enviarDatos(valor){
 	console.log('se envió un: ', valor);
 	console.log('');
 
+	const socket = io();
+
+	socket.on('ebutton', function(data){
+		console.log(data);
+		let mostrar = document.getElementById('datos');
+		mostrar.innerHTML = `${data}`;
+	});
+
+
 
 }
