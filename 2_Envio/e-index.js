@@ -1,10 +1,14 @@
-const socket = io("http://localhost:8080");
+//const socket = io("http://localhost:8080");
+const socket = io();
 const prender = document.getElementById("on-button")
 const apagar = document.getElementById("off-button")
 
 
 // Función de envío
 function enviarDatos(valor) {
+	console.log('Enviando dato: ', valor);
+	console.log();
+
 	if (valor === "1") {
 		socket.emit('encender', valor);
 	} else {

@@ -11,8 +11,9 @@ const Readline = Serialport.parsers.Readline;
 const port = new Serialport('COM6', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
-function apagarLED(valor) {
-	console.log("apagar", valor);
+function enviarDatos(valor) {
+	console.log('Serie - Enviando dato: ', valor)
+	port.write(valor);
 }
 
 
@@ -25,23 +26,17 @@ server.listen(8080, () => {
 
 // socket está escuchando
 io.on("connection", (socket) => {
-	console.log("connected!");
-	socket.emit("an_event", { some: "data" });
+	console.log("connected to the socket!");
 
-	socket.on("hi_back", (message) => console.log(message));
-
+	// Eventos que detonarán el envío
 	socket.on('encender', (valor) => {
-		console.log("encender pp: ", valor);
-		port.write('1');
+		enviarDatos(valor);
 	});
 
 	socket.on('apagar', (valor) => {
-		apagarLED(valor);
-		console.log('apagar pp;', valor)
-		port.write('0');
+		enviarDatos(valor);
 	});
 });
-io.on("hi_back", (message) => console.log(message));
 
 //Llamado a la página
 app.get('/', function (req, res) { res.sendFile(__dirname + '/e-index.html') });
