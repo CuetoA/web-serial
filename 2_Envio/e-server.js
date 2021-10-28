@@ -13,6 +13,8 @@ const parser = port.pipe(new Readline());
 
 function enviarDatos(valor) {
 	console.log('Serie - Enviando dato: ', valor)
+	port.write('CMD0002 1,5,199,0,0,1,2,3,4,5');
+	port.write('');
 	port.write(valor);
 }
 
