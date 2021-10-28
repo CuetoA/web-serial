@@ -19,6 +19,7 @@ function enviarDatos(valor) {
 
 // Comportamiento de botones
 prender.addEventListener('click', () => {
+	//enviarDatos();
 	enviarDatos('1');
 })
 
