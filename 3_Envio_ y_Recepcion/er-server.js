@@ -13,9 +13,7 @@ const parser = port.pipe(new Readline());
 
 function enviarDatos(valor) {
 	console.log('Serie - Enviando dato: ', valor)
-	port.write('CMD0002 1,5,199,0,0,2,3,4,4,5\r\n');
-	//port.write('\r');
-	//port.write(valor);
+	port.write(valor);
 }
 
 
@@ -30,12 +28,7 @@ server.listen(8080, () => {
 io.on("connection", (socket) => {
 	console.log("connected to the socket!");
 
-	// Eventos que detonarán el envío
-	socket.on('encender', (valor) => {
-		enviarDatos(valor);
-	});
-
-	socket.on('apagar', (valor) => {
+	socket.on('saludo', (valor) =>{
 		enviarDatos(valor);
 	});
 });
