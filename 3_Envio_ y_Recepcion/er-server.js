@@ -40,6 +40,8 @@ io.on("connection", (socket) => {
 	});
 });
 
+
+
 //Llamado a la página
-app.get('/', function (req, res) { res.sendFile(__dirname + '/e-index.html') });
+app.get('/', function (req, res) { res.sendFile(__dirname + '/er-index.html') });
 
