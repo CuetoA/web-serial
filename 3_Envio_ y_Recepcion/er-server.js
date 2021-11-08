@@ -33,6 +33,12 @@ io.on("connection", (socket) => {
 	});
 });
 
+// Emite evento temp cuando escucha evento data
+parser.on('data', function(data){
+	console.log(data);
+	io.emit('temp', data);
+});
+
 
 
 //Llamado a la página
