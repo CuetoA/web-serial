@@ -40,6 +40,13 @@ io.on("connection", (socket) => {
 	});
 });
 
+
+// Emite evento temp cuando escucha evento data
+parser.on('data', function(data){
+	console.log('Se está recibiendo: ',data);
+});
+
+
 //Llamado a la página
 app.get('/', function (req, res) { res.sendFile(__dirname + '/e-index.html') });
 
