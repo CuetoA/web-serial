@@ -14,6 +14,7 @@ const parser = port.pipe(new Readline());
 function enviarDatos(valor) {
 	console.log('Serie - Enviando dato: ', valor)
 	port.write(valor);
+	console.log("Hola Valkyria :3");
 }
 
 
@@ -29,13 +30,17 @@ io.on("connection", (socket) => {
 	console.log("connected to the socket!");
 
 	socket.on('saludo', (valor) =>{
+		console.log("Hola Andres");
 		enviarDatos(valor);
 	});
 });
 
 // Emite evento temp cuando escucha evento data
 parser.on('data', function(data){
-	console.log(data);
+	console.log("Hola Marco");
+	data = data.toString();
+	console.log("Hola May");
+	console.log("Aquí estoy-",data);
 	io.emit('temp', data);
 });
 

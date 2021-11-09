@@ -11,7 +11,7 @@ function enviarDatos(valor) {
 
 
 boton.addEventListener('click', () => {
-	enviarDatos('CMD0001 1,3,199,0,0\r\n');
+	enviarDatos('CMD0001 1,5,199,0,0\r');
 	console.log("Hola Grecia");
 })
 
