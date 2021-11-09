@@ -12,6 +12,7 @@ function enviarDatos(valor) {
 
 boton.addEventListener('click', () => {
 	enviarDatos('CMD0001 1,3,199,0,0\r\n');
+	console.log("Hola Grecia");
 })
 
 socket.on("an_event", (data) => {
